@@ -1,0 +1,12 @@
+{
+ "display_name": "Whisker UI",
+ "loading_order": 32,
+ "requires": [],
+ "optional": [],
+ "js": "script.js",
+ "css": "style.css",
+ "author": "CatMeowByte",
+ "version": "0.0.0",
+ "homePage": "",
+ "auto_update": false
+}

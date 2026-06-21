@@ -1,0 +1,216 @@
+/* Settings Bar */
+#top-settings-holder .fa-solid {
+ font-size: unset;
+}
+
+/* Top Bar */
+#whisker_topbar {
+ display: flex;
+ align-items: center;
+ width: 100%;
+ padding: 0.5rem;
+ background-color: var(--SmartThemeBlurTintColor);
+ backdrop-filter: blur(var(--SmartThemeBlurStrength));
+ flex-shrink: 0;
+}
+
+#whisker_topbar > * {
+ order: unset;
+ margin: unset;
+ font-size: unset;
+ width: unset;
+ height: unset;
+ opacity: unset;
+ color: unset;
+}
+
+#whisker_topbar > .chat_name {
+ flex: 1;
+ text-align: center;
+}
+
+#whisker_topbar .fa-solid {
+ padding: 0.5rem;
+}
+
+#whisker_topbar > .not-in-chat {
+ opacity: 0.5;
+}
+
+/* Text Bar */
+#dialogue_del_mes {
+ padding: 1rem;
+ margin: 0;
+	background-color: var(--SmartThemeBlurTintColor);
+	backdrop-filter: blur(var(--SmartThemeBlurStrength));
+ gap: 0.5rem;
+ columns: 2;
+}
+
+#dialogue_del_mes > .menu_button {
+ display: block;
+ width: unset;
+ padding: 0.5rem;
+ margin: unset;
+}
+
+#nonQRFormItems {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ grid-template-rows: auto auto;
+ grid-template-areas: "textarea textarea" "left right";
+ gap: 0.5rem;
+ padding: 0.5rem;
+}
+
+#nonQRFormItems .fa-solid {
+ font-size: 1rem;
+ padding: 0.5rem;
+ text-shadow: none;
+}
+
+#nonQRFormItems > #send_textarea {
+ grid-area: textarea;
+}
+
+#nonQRFormItems > #leftSendForm {
+ grid-area: left;
+ justify-self: start;
+}
+
+#nonQRFormItems > #rightSendForm {
+ grid-area: right;
+ justify-self: end;
+}
+
+#mes_stop,
+#send_but {
+ color: var(--SmartThemeBlurTintColor);
+ background-color: var(--SmartThemeQuoteColor);
+}
+
+/* Generic */
+:root {
+ --mes-right-spacing: 0;
+ --avatar-base-width: 3rem;
+ --avatar-base-height: var(--avatar-base-width);
+}
+
+#top-bar {
+ box-shadow: unset;
+}
+
+#chat > [type="welcome_prompt"] {
+ display: none;
+}
+
+#chat,
+#chat > .welcomePanel,
+#send_form {
+ border: unset;
+ border-radius: unset;
+}
+
+#chat > .welcomePanel > .welcomeRecent > .recentChatList {
+ gap: unset;
+}
+
+#chat > .welcomePanel > .welcomeRecent > .recentChatList > .recentChat {
+ padding: 1rem;
+ border-radius: unset;
+}
+
+#chat > div.mes {
+ border-radius: unset;
+ border: unset;
+ margin: unset;
+ padding: 2rem 1rem;
+}
+
+#chat > div.mes > .mesAvatarWrapper {
+ padding-right: 1rem;
+}
+
+#chat > div.mes[is_user="true"] {
+ background-color: var(--SmartThemeBlurTintColor);
+}
+
+.mes_block {
+ display: flex;
+ flex-direction: column;
+ gap: 0.25rem;
+ padding: unset;
+}
+
+details.mes_reasoning_details {
+ background-color: var(--SmartThemeBlurTintColor);
+ padding: 0.5rem;
+}
+
+.mes_reasoning_header_block {
+ align-items: center;
+}
+
+.mes_reasoning_header {
+ margin: unset;
+ border-radius: unset;
+ background-color: unset;
+ padding: unset;
+}
+
+.mes_reasoning_header_title {
+ opacity: 0.3;
+}
+
+.mes_reasoning_arrow {
+ display: none;
+}
+
+.mes_reasoning_actions {
+ margin: unset;
+	margin-right: var(--mes-right-spacing);
+}
+
+.mes_reasoning {
+ border: unset;
+ padding: unset;
+ margin-top: 0.5rem;
+ font-size: 75%;
+ line-height: 1.25;
+}
+
+.swipeRightBlock {
+ position: absolute;
+ bottom: 0;
+ left: 0;
+ width: 100%;
+}
+
+.swipes-counter {
+ align-items: end;
+}
+
+.swipes-counter,
+.swipe_right,
+.swipe_left {
+ margin-bottom: 0.5rem;
+}
+
+.swipe_right,
+.swipe_left {
+ position: absolute;
+ bottom: 0;
+	width: fit-content;
+ height: fit-content;
+ font-size: 1rem;
+ align-items: unset;
+ margin: 0.5rem 25%;
+}
+
+.swipe_left {
+ left: 0 !important;
+}
+
+.swipe_right {
+ right: 0 !important;
+}
