@@ -10,8 +10,8 @@ const chat_name = document.createElement('div');
 chat_name.className = 'chat_name';
 
 const btn_new_chat = $q('#option_start_new_chat');
-$q('span', btn_new_chat)?.remove();
-$q('i', btn_new_chat)?.classList.replace('fa-comments', 'fa-plus');
+btn_new_chat.innerHTML = '';
+btn_new_chat.classList.add('fa-solid', 'fa-plus');
 
 const btn_close_chat = document.createElement('i');
 btn_close_chat.className = 'fa-solid fa-times';
