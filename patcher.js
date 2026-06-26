@@ -2,10 +2,9 @@ const rule_replacer = new Map([
  ['#rightSendForm > div:not(.mes_stop), #leftSendForm > div', '#rightSendForm > div, #leftSendForm > div']
 ]);
 const style_modifier = new Map([
- // ['#rightSendForm > div, #leftSendForm > div',
+ // ['.range-block-range-and-counter',
  //  {
- //   'display': 'flex',
- //   'align-items': 'center',
+ //   'flex-direction': 'column',
  //  }
  // ]
 ]);

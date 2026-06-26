@@ -1,0 +1,32 @@
+#whisker_topbar {
+ display: flex;
+ align-items: center;
+ width: 100%;
+ padding: 0.5rem;
+ background-color: var(--SmartThemeBlurTintColor);
+ backdrop-filter: blur(var(--SmartThemeBlurStrength));
+ flex-shrink: 0;
+}
+
+#whisker_topbar > * {
+ order: unset;
+ margin: unset;
+ font-size: unset;
+ width: unset;
+ height: unset;
+ opacity: unset;
+ color: unset;
+}
+
+#whisker_topbar > .chat_name {
+ flex: 1;
+ text-align: center;
+}
+
+#whisker_topbar .fa-solid {
+ padding: 0.5rem;
+}
+
+#whisker_topbar > .not-in-chat {
+ opacity: 0.5;
+}

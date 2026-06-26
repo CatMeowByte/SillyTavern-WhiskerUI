@@ -1,0 +1,51 @@
+#dialogue_del_mes {
+ padding: 1rem;
+ margin: 0;
+	background-color: var(--SmartThemeBlurTintColor);
+	backdrop-filter: blur(var(--SmartThemeBlurStrength));
+ gap: 0.5rem;
+ columns: 2;
+}
+
+#dialogue_del_mes > .menu_button {
+ display: block;
+ width: unset;
+ padding: 0.5rem;
+ margin: unset;
+}
+
+#nonQRFormItems {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ grid-template-rows: auto auto;
+ grid-template-areas: "textarea textarea" "left right";
+ gap: 0.5rem;
+ padding: 0.5rem;
+}
+
+#nonQRFormItems .fa-solid {
+ font-size: 1rem;
+ padding: 0.5rem;
+ text-shadow: none;
+}
+
+#nonQRFormItems > #send_textarea {
+ grid-area: textarea;
+}
+
+#nonQRFormItems > #leftSendForm {
+ grid-area: left;
+ justify-self: start;
+}
+
+#nonQRFormItems > #rightSendForm {
+ grid-area: right;
+ justify-self: end;
+ gap: 1rem;
+}
+
+#mes_stop,
+#send_but {
+ color: var(--SmartThemeBlurTintColor);
+ background-color: var(--SmartThemeQuoteColor);
+}

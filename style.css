@@ -3,97 +3,17 @@
  font-size: unset;
 }
 
-/* Top Bar */
-#whisker_topbar {
- display: flex;
- align-items: center;
- width: 100%;
- padding: 0.5rem;
- background-color: var(--SmartThemeBlurTintColor);
- backdrop-filter: blur(var(--SmartThemeBlurStrength));
- flex-shrink: 0;
-}
-
-#whisker_topbar > * {
- order: unset;
- margin: unset;
- font-size: unset;
- width: unset;
- height: unset;
- opacity: unset;
- color: unset;
-}
-
-#whisker_topbar > .chat_name {
- flex: 1;
- text-align: center;
-}
-
-#whisker_topbar .fa-solid {
- padding: 0.5rem;
-}
-
-#whisker_topbar > .not-in-chat {
- opacity: 0.5;
-}
-
-/* Text Bar */
-#dialogue_del_mes {
- padding: 1rem;
- margin: 0;
-	background-color: var(--SmartThemeBlurTintColor);
-	backdrop-filter: blur(var(--SmartThemeBlurStrength));
- gap: 0.5rem;
- columns: 2;
-}
-
-#dialogue_del_mes > .menu_button {
- display: block;
- width: unset;
- padding: 0.5rem;
- margin: unset;
-}
-
-#nonQRFormItems {
- display: grid;
- grid-template-columns: 1fr 1fr;
- grid-template-rows: auto auto;
- grid-template-areas: "textarea textarea" "left right";
- gap: 0.5rem;
- padding: 0.5rem;
-}
-
-#nonQRFormItems .fa-solid {
- font-size: 1rem;
- padding: 0.5rem;
- text-shadow: none;
-}
-
-#nonQRFormItems > #send_textarea {
- grid-area: textarea;
-}
-
-#nonQRFormItems > #leftSendForm {
- grid-area: left;
- justify-self: start;
-}
-
-#nonQRFormItems > #rightSendForm {
- grid-area: right;
- justify-self: end;
-}
-
-#mes_stop,
-#send_but {
- color: var(--SmartThemeBlurTintColor);
- background-color: var(--SmartThemeQuoteColor);
-}
-
 /* Generic */
 :root {
  --mes-right-spacing: 0;
  --avatar-base-width: 3rem;
  --avatar-base-height: var(--avatar-base-width);
+}
+
+#user-settings-block-content,
+#persona-management-block,
+.range-block-range-and-counter {
+ flex-direction: column;
 }
 
 #top-bar {
@@ -129,10 +49,6 @@
 
 #chat > div.mes > .mesAvatarWrapper {
  padding-right: 1rem;
-}
-
-#chat > div.mes[is_user="true"] {
- background-color: var(--SmartThemeBlurTintColor);
 }
 
 .mes_block {

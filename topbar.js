@@ -13,16 +13,17 @@ const btn_new_chat = $q('#option_start_new_chat');
 btn_new_chat.innerHTML = '';
 btn_new_chat.classList.add('fa-solid', 'fa-plus');
 
-const btn_close_chat = document.createElement('i');
-btn_close_chat.className = 'fa-solid fa-times';
-btn_close_chat.title = 'Close chat';
+const [hidden_close_chat, visible_close_chat] = $qa('#option_close_chat');
+hidden_close_chat?.remove();
+visible_close_chat.innerHTML = '';
+visible_close_chat.classList.add('fa-solid', 'fa-times');
 
 const btn_options = $q('#options_button');
 
 const btn_extensions = $q('#extensionsMenuButton');
 btn_extensions.classList.replace('fa-magic-wand-sparkles', 'fa-wrench');
 
-bar_top.append(btn_new_chat, chat_name, btn_extensions, btn_options, btn_close_chat);
+bar_top.append(btn_new_chat, chat_name, btn_extensions, btn_options, visible_close_chat);
 sheld.insertBefore(bar_top, chat);
 
 function update_chat_name() {
@@ -38,10 +39,6 @@ $on(chat_name, 'click', async () => {
  if (!current_name) return;
  const new_name = await Popup.show.input('Enter new chat name', null, current_name);
  if (new_name && new_name !== current_name) await renameChat(current_name, String(new_name));
-});
-
-$on(btn_close_chat, 'click', () => {
- $q('#option_close_chat')?.click();
 });
 
 update_chat_name();
