@@ -1,12 +1,26 @@
-const rule_replacer = new Map([
- ['#rightSendForm > div:not(.mes_stop), #leftSendForm > div', '#rightSendForm > div, #leftSendForm > div']
+const rule_remover = new Set([
+ 'body.hideChatAvatars .last_mes:not(.smallSysMes)',
 ]);
-const style_modifier = new Map([
- ['.neo-range-slider',
-  {
-   'background': 'none',
+
+for (const sheet of document.styleSheets) {
+ try {
+  for (let i = sheet.cssRules.length - 1; i >= 0; i--) {
+   if (rule_remover.has(sheet.cssRules[i].selectorText)) { sheet.deleteRule(i); }
   }
- ]
+ } catch (e) {}
+}
+
+
+const rule_replacer = new Map([
+ ['#rightSendForm > div:not(.mes_stop), #leftSendForm > div', '#rightSendForm > div, #leftSendForm > div'],
+]);
+
+const style_modifier = new Map([
+ ['.neo-range-slider', { 'background': 'none', }],
+ ['.avatar img', { 'border': 'none', 'box-shadow': 'unset'}],
+
+ // toggle dependent
+ ['body.hideChatAvatars .last_mes:not(.smallSysMes)', { 'padding-bottom': 'inherit'}],
 ]);
 
 for (let sheet of document.styleSheets) {
@@ -22,6 +36,7 @@ for (let sheet of document.styleSheets) {
 }
 
 const class_modifier = new Map([
+ ['#top-settings-holder .drawer-content', { remove: ['fillRight', 'fillLeft'] }],
  ['#wiTopBlock > .flex1.flex.alignSelfStart.range-block:nth-child(2)', { add: ['wide100p'] }],
  ['select', { remove: ['text_pole'] }],
 ]);

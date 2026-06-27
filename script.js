@@ -22,6 +22,5 @@ for (const file of style_file) {
  document.head.appendChild(link_file);
 }
 
-import './setting.js';
-import './topbar.js';
-import './textbar.js';
+import './interface/bar_top.js';
+import './interface/bar_text.js';

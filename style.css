@@ -27,6 +27,18 @@ select {
  appearance: button !important;
 }
 
+.popup {
+ padding: 1rem;
+}
+
+.popup-controls {
+ align-self: unset;
+}
+
+.popup-controls .menu_button {
+ flex: 1;
+}
+
 #top-bar {
  box-shadow: unset;
 }

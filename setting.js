@@ -1,1 +1,0 @@
-$qa('#top-settings-holder .drawer-content').forEach(el => {el.classList.remove('fillRight', 'fillLeft');});

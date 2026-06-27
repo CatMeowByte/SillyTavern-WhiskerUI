@@ -1,5 +1,6 @@
 .mes[is_user="false"] {
  --distance: 42.5%;
+ --height: 0.75rem;
 }
 
 .swipeRightBlock {
@@ -13,12 +14,6 @@
  align-items: end;
 }
 
-.swipes-counter,
-.swipe_right,
-.swipe_left {
- margin-bottom: 0.5rem;
-}
-
 .swipe_right,
 .swipe_left {
  position: absolute;
@@ -28,6 +23,12 @@
  font-size: 1rem;
  align-items: unset;
  margin: 0.5rem var(--distance);
+}
+
+.swipes-counter,
+.swipe_right,
+.swipe_left {
+ margin-bottom: var(--height);
 }
 
 .swipe_left {

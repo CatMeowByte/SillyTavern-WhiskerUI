@@ -2,7 +2,16 @@
  border-radius: unset;
  border: unset;
  margin: unset;
- padding: 2rem 1rem;
+ padding: 1rem;
+}
+
+.mes[is_user="true"] {
+ background-color: var(--SmartThemeUserMesBlurTintColor);
+}
+
+.mes[is_user="false"] {
+ background-color: var(--SmartThemeBotMesBlurTintColor);
+ padding-bottom: 2rem;
 }
 
 .mes > .mesAvatarWrapper {
@@ -14,6 +23,14 @@
  flex-direction: column;
  gap: 0.25rem;
  padding: unset;
+}
+
+.mes_block .flex-container.alignItemsBaseline {
+ gap: 0.5rem;
+}
+
+.mes_block .flex-container.alignItemsBaseline > .name_text {
+ width: 100%;
 }
 
 details.mes_reasoning_details {
