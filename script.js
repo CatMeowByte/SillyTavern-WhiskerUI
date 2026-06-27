@@ -5,8 +5,10 @@ import './patcher.js';
 const path_base = '/scripts/extensions/SillyTavern-WhiskerUI';
 
 const style_file = [
+ '/interface/message.css',
  '/interface/select.css',
  '/interface/slider.css',
+ '/interface/swipe.css',
  '/interface/input_number.css',
  '/interface/bar_text.css',
  '/interface/bar_top.css',

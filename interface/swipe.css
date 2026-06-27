@@ -1,0 +1,39 @@
+.mes[is_user="false"] {
+ --distance: 42.5%;
+}
+
+.swipeRightBlock {
+ position: absolute;
+ bottom: 0;
+ left: 0;
+ width: 100%;
+}
+
+.swipes-counter {
+ align-items: end;
+}
+
+.swipes-counter,
+.swipe_right,
+.swipe_left {
+ margin-bottom: 0.5rem;
+}
+
+.swipe_right,
+.swipe_left {
+ position: absolute;
+ bottom: 0;
+	width: fit-content;
+ height: fit-content;
+ font-size: 1rem;
+ align-items: unset;
+ margin: 0.5rem var(--distance);
+}
+
+.swipe_left {
+ left: 0 !important;
+}
+
+.swipe_right {
+ right: 0 !important;
+}

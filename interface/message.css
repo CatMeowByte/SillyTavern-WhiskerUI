@@ -1,0 +1,54 @@
+.mes {
+ border-radius: unset;
+ border: unset;
+ margin: unset;
+ padding: 2rem 1rem;
+}
+
+.mes > .mesAvatarWrapper {
+ padding-right: 1rem;
+}
+
+.mes_block {
+ display: flex;
+ flex-direction: column;
+ gap: 0.25rem;
+ padding: unset;
+}
+
+details.mes_reasoning_details {
+ background-color: var(--SmartThemeBlurTintColor);
+ padding: 0.5rem;
+}
+
+.mes_reasoning_header_block {
+ align-items: center;
+}
+
+.mes_reasoning_header {
+ margin: unset;
+ border-radius: unset;
+ background-color: unset;
+ padding: unset;
+}
+
+.mes_reasoning_header_title {
+ opacity: 0.3;
+}
+
+.mes_reasoning_arrow {
+ display: none;
+}
+
+.mes_reasoning_actions {
+ margin: unset;
+	margin-right: var(--mes-right-spacing);
+}
+
+.mes_reasoning {
+ border: unset;
+ padding: unset;
+ margin-top: 0.5rem;
+ font-size: 75%;
+ line-height: 1.25;
+}

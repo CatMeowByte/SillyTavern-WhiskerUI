@@ -12,8 +12,19 @@
 
 #user-settings-block-content,
 #persona-management-block,
+#AdvancedFormatting > .flex-container.spaceEvenly,
+#wiActivationSettings,
+#wiSliders,
 .range-block-range-and-counter {
  flex-direction: column;
+}
+
+#wiTopBlock {
+ flex-direction: column-reverse;
+}
+
+select {
+ appearance: button !important;
 }
 
 #top-bar {
@@ -40,93 +51,3 @@
  border-radius: unset;
 }
 
-#chat > div.mes {
- border-radius: unset;
- border: unset;
- margin: unset;
- padding: 2rem 1rem;
-}
-
-#chat > div.mes > .mesAvatarWrapper {
- padding-right: 1rem;
-}
-
-.mes_block {
- display: flex;
- flex-direction: column;
- gap: 0.25rem;
- padding: unset;
-}
-
-details.mes_reasoning_details {
- background-color: var(--SmartThemeBlurTintColor);
- padding: 0.5rem;
-}
-
-.mes_reasoning_header_block {
- align-items: center;
-}
-
-.mes_reasoning_header {
- margin: unset;
- border-radius: unset;
- background-color: unset;
- padding: unset;
-}
-
-.mes_reasoning_header_title {
- opacity: 0.3;
-}
-
-.mes_reasoning_arrow {
- display: none;
-}
-
-.mes_reasoning_actions {
- margin: unset;
-	margin-right: var(--mes-right-spacing);
-}
-
-.mes_reasoning {
- border: unset;
- padding: unset;
- margin-top: 0.5rem;
- font-size: 75%;
- line-height: 1.25;
-}
-
-.swipeRightBlock {
- position: absolute;
- bottom: 0;
- left: 0;
- width: 100%;
-}
-
-.swipes-counter {
- align-items: end;
-}
-
-.swipes-counter,
-.swipe_right,
-.swipe_left {
- margin-bottom: 0.5rem;
-}
-
-.swipe_right,
-.swipe_left {
- position: absolute;
- bottom: 0;
-	width: fit-content;
- height: fit-content;
- font-size: 1rem;
- align-items: unset;
- margin: 0.5rem 25%;
-}
-
-.swipe_left {
- left: 0 !important;
-}
-
-.swipe_right {
- right: 0 !important;
-}

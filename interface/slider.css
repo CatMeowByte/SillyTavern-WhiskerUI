@@ -1,7 +1,7 @@
 /*********** Baseline, reset styles ***********/
 input[type="range"] {
- --range_bg: var(--SmartThemeBorderColor);
- --range_fg: var(--SmartThemeQuoteColor);
+ --range_bg: var(--SmartThemeShadowColor);
+ --range_fg: var(--SmartThemeBodyColor);
  --range_size: 1rem;
 
  -webkit-appearance: none;
@@ -45,6 +45,11 @@ input[type="range"]::-moz-range-track {
  background-color: var(--range_bg);
  border-radius: 0rem;
  height: var(--range_size);
+}
+
+input[type="range"]::-moz-range-progress,
+input[type="range"]::slider-fill {
+	display: none !important;
 }
 
 /* slider thumb */

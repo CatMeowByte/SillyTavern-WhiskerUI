@@ -2,11 +2,11 @@ const rule_replacer = new Map([
  ['#rightSendForm > div:not(.mes_stop), #leftSendForm > div', '#rightSendForm > div, #leftSendForm > div']
 ]);
 const style_modifier = new Map([
- // ['.range-block-range-and-counter',
- //  {
- //   'flex-direction': 'column',
- //  }
- // ]
+ ['.neo-range-slider',
+  {
+   'background': 'none',
+  }
+ ]
 ]);
 
 for (let sheet of document.styleSheets) {
@@ -19,4 +19,16 @@ for (let sheet of document.styleSheets) {
   }
  }
  catch (e) {}
+}
+
+const class_modifier = new Map([
+ ['#wiTopBlock > .flex1.flex.alignSelfStart.range-block:nth-child(2)', { add: ['wide100p'] }],
+ ['select', { remove: ['text_pole'] }],
+]);
+
+for (const [selector, ops] of class_modifier) {
+ for (const el of document.querySelectorAll(selector)) {
+  if (ops.add) { el.classList.add(...ops.add); }
+  if (ops.remove) { el.classList.remove(...ops.remove); }
+ }
 }
