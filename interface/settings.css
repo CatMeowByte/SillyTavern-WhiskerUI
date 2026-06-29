@@ -1,0 +1,40 @@
+#whisker_dialog_settings {
+ width: 30rem;
+ height: 30rem;
+ padding: 1rem;
+ gap: 1rem;
+ background-color: var(--SmartThemeBlurTintColor);
+ display: flex;
+ flex-direction: column;
+}
+
+#whisker_dialog_settings:not([open]) {
+ display: none;
+}
+
+#whisker_dialog_settings::backdrop {
+ background: rgba(0, 0, 0, 0.5);
+}
+
+.whisker_dialog_header {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+}
+
+.whisker_dialog_header > h2 {
+ margin: 0;
+ font-size: 1.5rem;
+}
+
+.whisker_dialog_header > button {
+ background: none;
+ border: none;
+ font-size: 1.5rem;
+ cursor: pointer;
+ line-height: 1;
+}
+
+#AdvancedFormatting {
+ overflow-y: auto;
+}

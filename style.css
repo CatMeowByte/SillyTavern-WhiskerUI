@@ -1,3 +1,12 @@
+@import url('./interface/bar_text.css');
+@import url('./interface/bar_top.css');
+@import url('./interface/input_number.css');
+@import url('./interface/message.css');
+@import url('./interface/select.css');
+/* @import url('./interface/settings.css'); */
+@import url('./interface/swipe.css');
+@import url('./interface/swipe.css');
+
 /* Settings Bar */
 #top-settings-holder .fa-solid {
  font-size: unset;
