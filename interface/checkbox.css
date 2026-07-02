@@ -1,0 +1,15 @@
+input[type="checkbox"] {
+ appearance: none;
+ align-items: center;
+ justify-content: center;
+ background-color: var(--SmartThemeBodyColor);
+ border: unset;
+ border-radius: 50%;
+}
+input[type="checkbox"]:checked {
+ background-color: var(--SmartThemeQuoteColor);
+}
+input[type="checkbox"]:checked::before {
+ color: var(--SmartThemeBodyColor);
+}
+
