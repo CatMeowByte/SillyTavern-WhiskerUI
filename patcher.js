@@ -1,3 +1,10 @@
+// fuck you mobile
+for (const sheet of document.styleSheets) {
+ if (sheet.href?.includes('mobile-styles.css')) {
+  for (let i = sheet.cssRules.length - 1; i >= 0; i--) { sheet.deleteRule(i); }
+ }
+}
+
 const rule_remover = new Set([
  'body.hideChatAvatars .last_mes:not(.smallSysMes)',
  '#sheld',

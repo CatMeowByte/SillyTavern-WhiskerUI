@@ -79,6 +79,20 @@ select {
 
 /* WHISKER SPECIFIC */
 
+.whisker_dialog_backdrop {
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background: rgba(0,0,0,0.5);
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ z-index: 100;
+ backdrop-filter: blur(var(--SmartThemeBlurStrength));
+}
+
 .whisker_popup {
  padding: unset;
  border: unset;
@@ -91,10 +105,8 @@ dialog.whisker_popup {
  padding: 1rem;
  gap: 1rem;
  border-radius: 1rem;
-}
-
-dialog.whisker_popup::backdrop {
- backdrop-filter: blur(var(--SmartThemeBlurStrength));
+ max-width: calc(100vw - 2rem);
+ max-height: calc(100vh - 2rem);
 }
 
 [popover].whisker_popup {
@@ -108,10 +120,20 @@ dialog.whisker_popup[open] {
  flex-direction: column;
 }
 
+#whisker_body .whisker_popup_content {
+ position: unset;
+ overflow-y: scroll;
+}
+
 #sheld {
- width: var(--sheldWidth);
  height: 100%;
- margin: auto;
  display: flex;
  flex-direction: column;
+}
+
+@media (orientation: landscape) {
+ #sheld {
+  width: var(--sheldWidth);
+  margin: auto;
+ }
 }

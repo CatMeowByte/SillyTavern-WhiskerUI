@@ -2,6 +2,11 @@
 
 const whisker_topbar = $q('#whisker_topbar');
 
+const whisker_dialog_backdrop = document.createElement('div');
+whisker_dialog_backdrop.className = 'whisker_dialog_backdrop';
+whisker_dialog_backdrop.style.setProperty('display', 'none');
+document.body.append(whisker_dialog_backdrop);
+
 // ===================
 // the popover things
 
@@ -47,6 +52,7 @@ for (const [label, icon, content_supplier] of setting_items) {
 
  const item_dialog = document.createElement('dialog');
  item_dialog.className = 'whisker_popup';
+ whisker_dialog_backdrop.append(item_dialog);
 
  const dialog_header = document.createElement('div');
  dialog_header.className = 'whisker_dialog_header';
@@ -62,12 +68,26 @@ for (const [label, icon, content_supplier] of setting_items) {
  item_dialog.append(dialog_header);
 
  const moved_element = $q(content_supplier);
- moved_element?.classList.remove('drawer-content', 'closedDrawer');
+ moved_element.className = 'whisker_popup_content';
  item_dialog.append(moved_element);
 
+ item_entry.append(item_icon, item_label);
 
- item_entry.append(item_icon, item_label, item_dialog);
- $on(item_entry, 'click', () => { item_dialog.showModal(); });
+ $on(item_entry, 'click', () => {
+  whisker_dialog_backdrop.style.removeProperty('display');
+  for (const child of whisker_dialog_backdrop.children) {
+   if (child !== item_dialog && child.open) child.close();
+  }
+  item_dialog.show();
+ });
+
+ item_dialog.addEventListener('close', () => {
+  setTimeout(() => {
+   if (!whisker_dialog_backdrop.querySelector('dialog[open]')) {
+    whisker_dialog_backdrop.style.setProperty('display', 'none');
+   }
+  }, 0);
+ });
 
  setting_list_popover.append(item_entry);
 }
@@ -77,3 +97,13 @@ for (const [label, icon, content_supplier] of setting_items) {
 $q('#top-bar').remove()
 $q('#top-settings-holder').remove()
 
+// cleanup dialog header
+$q('#clickSlidersTips').remove()
+$q('.topRightInset').remove()
+$q('[name="userSettingsRowOne"] > .flex-container:first-child').remove();
+$q('#connection_profile_details_content').parentElement.remove();
+$q('h3:has(> [data-i18n="Advanced Formatting"])').remove();
+$q('h3:has(> [data-i18n="Backgrounds"])').remove();
+$q('h3[data-i18n="Extensions"]').remove();
+$q('.flex-container:has(> h3 > [data-i18n="Persona Management"])').remove();
+$q('.flex-container:has(> h3 > [data-i18n="Worlds/Lorebooks"])').remove();
