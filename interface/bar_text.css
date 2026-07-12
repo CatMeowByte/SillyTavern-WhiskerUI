@@ -49,3 +49,7 @@
  color: var(--SmartThemeBlurTintColor);
  background-color: var(--SmartThemeQuoteColor);
 }
+
+#form_sheld {
+ margin: unset;
+}

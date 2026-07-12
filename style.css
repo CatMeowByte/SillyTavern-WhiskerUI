@@ -79,10 +79,39 @@ select {
 
 /* WHISKER SPECIFIC */
 
+.whisker_popup {
+ padding: unset;
+ border: unset;
+
+ backdrop-filter: blur(var(--SmartThemeBlurStrength));
+ box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+}
+
+dialog.whisker_popup {
+ padding: 1rem;
+ gap: 1rem;
+ border-radius: 1rem;
+}
+
+dialog.whisker_popup::backdrop {
+ backdrop-filter: blur(var(--SmartThemeBlurStrength));
+}
+
+[popover].whisker_popup {
+ border-radius: 0.5rem;
+}
+
 .whisker_popup:popover-open,
 dialog.whisker_popup[open] {
  background-color: var(--SmartThemeBlurTintColor);
- padding: 1rem;
+ display: flex;
+ flex-direction: column;
+}
+
+#sheld {
+ width: var(--sheldWidth);
+ height: 100%;
+ margin: auto;
  display: flex;
  flex-direction: column;
 }

@@ -1,37 +1,6 @@
 // Settings dialog injection
 
-const dialog_settings = document.createElement('dialog');
-dialog_settings.id = 'whisker_dialog_settings';
-dialog_settings.className = 'whisker_popup';
-document.body.append(dialog_settings);
-
-const dialog_settings_header = document.createElement('div');
-dialog_settings_header.className = 'whisker_dialog_header';
-
-const dialog_settings_title = document.createElement('h2');
-dialog_settings_title.textContent = 'Settings';
-
-const dialog_settings_close = document.createElement('button');
-dialog_settings_close.className = 'fa-solid fa-times';
-$on(dialog_settings_close, 'click', () => { dialog_settings.close(); });
-
-dialog_settings_header.append(dialog_settings_title, dialog_settings_close);
-dialog_settings.append(dialog_settings_header);
-
-// Trigger button in topbar
-const dialog_settings_trigger = document.createElement('a');
-dialog_settings_trigger.className = 'fa-solid fa-gear interactable';
-dialog_settings_trigger.title = 'Settings';
-dialog_settings_trigger.tabIndex = 0;
-$on(dialog_settings_trigger, 'click', () => { dialog_settings.showModal(); });
-
 const whisker_topbar = $q('#whisker_topbar');
-whisker_topbar.append(dialog_settings_trigger);
-
-// Transport AdvancedFormatting into dialog
-const advanced_formatting = $q('#AdvancedFormatting');
-advanced_formatting.classList.remove('drawer-content', 'closedDrawer');
-dialog_settings.append(advanced_formatting);
 
 // ===================
 // the popover things
@@ -39,7 +8,6 @@ dialog_settings.append(advanced_formatting);
 const setting_list_popover = document.createElement('div');
 setting_list_popover.id = 'setting_list';
 setting_list_popover.popover = 'auto';
-setting_list_popover.textContent = 'Whatever you want inside!';
 setting_list_popover.className = 'whisker_popup';
 document.body.append(setting_list_popover);
 
@@ -51,3 +19,61 @@ whisker_topbar.append(setting_list_button);
 const seting_list_popper = Popper.createPopper(setting_list_button, setting_list_popover, { placement: 'bottom-end' });
 setting_list_popover.addEventListener('beforetoggle', (event) => { if (event.newState === 'open') { seting_list_popper.forceUpdate(); }
 });
+
+// popover items
+// ==================
+
+const setting_items = [
+ ['Context', 'indent', '#left-nav-panel'],
+ ['Connection', 'server', '#rm_api_block'],
+ ['Formatting', 'marker', '#AdvancedFormatting'],
+ ['Customization', 'palette', '#user-settings-block'],
+ ['Background', 'panorama', '#Backgrounds'],
+ ['Extension', 'puzzle-piece', '#rm_extensions_block'],
+ ['Persona', 'user', '#PersonaManagement'],
+ ['Character', 'address-card', '#right-nav-panel'],
+ ['World', 'book', '#WorldInfo'],
+];
+
+for (const [label, icon, content_supplier] of setting_items) {
+ const item_entry = document.createElement('a');
+ item_entry.className = 'interactable';
+
+ const item_icon = document.createElement('i');
+ item_icon.className = `fa-solid fa-${icon}`;
+
+ const item_label = document.createElement('span');
+ item_label.textContent = label;
+
+ const item_dialog = document.createElement('dialog');
+ item_dialog.className = 'whisker_popup';
+
+ const dialog_header = document.createElement('div');
+ dialog_header.className = 'whisker_dialog_header';
+
+ const dialog_title = document.createElement('h2');
+ dialog_title.textContent = label;
+
+ const dialog_close = document.createElement('button');
+ dialog_close.className = 'fa-solid fa-times';
+ $on(dialog_close, 'click', (event) => { event.stopPropagation(); item_dialog.close(); });
+
+ dialog_header.append(dialog_title, dialog_close);
+ item_dialog.append(dialog_header);
+
+ const moved_element = $q(content_supplier);
+ moved_element?.classList.remove('drawer-content', 'closedDrawer');
+ item_dialog.append(moved_element);
+
+
+ item_entry.append(item_icon, item_label, item_dialog);
+ $on(item_entry, 'click', () => { item_dialog.showModal(); });
+
+ setting_list_popover.append(item_entry);
+}
+
+// delete the top bar
+
+$q('#top-bar').remove()
+$q('#top-settings-holder').remove()
+
