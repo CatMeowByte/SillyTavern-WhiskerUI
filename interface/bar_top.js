@@ -19,11 +19,12 @@ visible_close_chat.innerHTML = '';
 visible_close_chat.classList.add('fa-solid', 'fa-times');
 
 const btn_options = $q('#options_button');
+btn_options.classList.replace('fa-bars', 'fa-ellipsis-vertical');
 
 const btn_extensions = $q('#extensionsMenuButton');
 btn_extensions.classList.replace('fa-magic-wand-sparkles', 'fa-wrench');
 
-bar_top.append(btn_new_chat, chat_name, btn_extensions, btn_options, visible_close_chat);
+bar_top.append(visible_close_chat, btn_new_chat, chat_name, btn_extensions, btn_options);
 sheld.insertBefore(bar_top, chat);
 
 function update_chat_name() {

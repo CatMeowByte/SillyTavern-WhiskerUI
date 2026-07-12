@@ -18,7 +18,7 @@ document.body.append(setting_list_popover);
 
 const setting_list_button = document.createElement('button');
 setting_list_button.setAttribute('popovertarget', setting_list_popover.id);
-setting_list_button.className = 'fa-solid fa-screwdriver-wrench';
+setting_list_button.className = 'fa-solid fa-bars';
 whisker_topbar.append(setting_list_button);
 
 const seting_list_popper = Popper.createPopper(setting_list_button, setting_list_popover, { placement: 'bottom-end' });
@@ -107,3 +107,12 @@ $q('h3:has(> [data-i18n="Backgrounds"])').remove();
 $q('h3[data-i18n="Extensions"]').remove();
 $q('.flex-container:has(> h3 > [data-i18n="Persona Management"])').remove();
 $q('.flex-container:has(> h3 > [data-i18n="Worlds/Lorebooks"])').remove();
+
+// world info HACK
+const select_element = $q('#world_editor_select');
+const row_wrapper = document.createElement('div');
+row_wrapper.style.display = 'flex';
+row_wrapper.style.flexBasis = '100%';
+while (select_element.nextElementSibling) { row_wrapper.appendChild(select_element.nextElementSibling); }
+select_element.parentNode.style.flexWrap = 'wrap';
+select_element.parentNode.appendChild(row_wrapper);

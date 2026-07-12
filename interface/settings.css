@@ -31,6 +31,10 @@
  overflow-y: auto;
 }
 
+#WorldInfo {
+ display: contents;
+}
+
 /* ============================== */
 
 [popovertarget="setting_list"] {
@@ -43,6 +47,7 @@
  align-items: center;
  padding: 0.5rem;
  gap: 0.5rem;
+ color: var(--SmartThemeBodyColor);
 }
 
 #setting_list > a > i {
