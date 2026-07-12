@@ -4,7 +4,7 @@
 @import url('./interface/input_number.css');
 @import url('./interface/message.css');
 @import url('./interface/select.css');
-/* @import url('./interface/settings.css'); */
+@import url('./interface/settings.css');
 @import url('./interface/slider.css');
 @import url('./interface/swipe.css');
 
@@ -75,4 +75,14 @@ select {
 #chat > .welcomePanel > .welcomeRecent > .recentChatList > .recentChat {
  padding: 1rem;
  border-radius: unset;
+}
+
+/* WHISKER SPECIFIC */
+
+.whisker_popup:popover-open,
+dialog.whisker_popup[open] {
+ background-color: var(--SmartThemeBlurTintColor);
+ padding: 1rem;
+ display: flex;
+ flex-direction: column;
 }

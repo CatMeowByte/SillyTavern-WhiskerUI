@@ -18,6 +18,7 @@ const rule_replacer = new Map([
 const style_modifier = new Map([
  ['.neo-range-slider', { 'background': 'none', }],
  ['.avatar img', { 'border': 'none', 'box-shadow': 'unset'}],
+ ['#character_popup', { 'z-index': '4005'}],
 
  // toggle dependent
  ['body.hideChatAvatars .last_mes:not(.smallSysMes)', { 'padding-bottom': 'inherit'}],
