@@ -1,8 +1,5 @@
 const { getCurrentChatId, renameChat, eventSource, event_types, Popup } = SillyTavern.getContext();
 
-const sheld = $q('#sheld');
-const chat = $q('#chat');
-
 const bar_top = document.createElement('div');
 bar_top.id = 'whisker_topbar';
 
@@ -13,19 +10,14 @@ const btn_new_chat = $q('#option_start_new_chat');
 btn_new_chat.innerHTML = '';
 btn_new_chat.classList.add('fa-solid', 'fa-plus');
 
-const [hidden_close_chat, visible_close_chat] = $qa('#option_close_chat');
-hidden_close_chat?.remove();
-visible_close_chat.innerHTML = '';
-visible_close_chat.classList.add('fa-solid', 'fa-times');
-
 const btn_options = $q('#options_button');
 btn_options.classList.replace('fa-bars', 'fa-ellipsis-vertical');
 
 const btn_extensions = $q('#extensionsMenuButton');
 btn_extensions.classList.replace('fa-magic-wand-sparkles', 'fa-wrench');
 
-bar_top.append(visible_close_chat, btn_new_chat, chat_name, btn_extensions, btn_options);
-sheld.insertBefore(bar_top, chat);
+bar_top.append(btn_new_chat, chat_name, btn_extensions, btn_options);
+$q('#sheld').insertBefore(bar_top, $q('#chat'));
 
 function update_chat_name() {
  const name = getCurrentChatId();

@@ -1,0 +1,53 @@
+#whisker_bar_chat {
+ display: flex;
+ align-items: center;
+ width: 100%;
+ padding: 0.5rem;
+ background-color: var(--SmartThemeBlurTintColor);
+ backdrop-filter: blur(var(--SmartThemeBlurStrength));
+ flex-shrink: 0;
+}
+
+#whisker_bar_chat > * {
+ order: unset;
+ margin: unset;
+ font-size: unset;
+ width: unset;
+ height: unset;
+ opacity: unset;
+ color: unset;
+}
+
+#whisker_bar_chat .fa-solid {
+ padding: 0.5rem;
+}
+
+#whisker_bar_chat_subject {
+ display: flex;
+ flex: 1;
+ align-items: center;
+ justify-content: center;
+ gap: 0.5rem;
+ min-width: 0;
+}
+
+#whisker_bar_chat_subject > #whisker_bar_chat_name {
+ max-width: none;
+}
+
+#whisker_bar_chat_avatar {
+ margin-right: 0.5rem;
+ display: flex;
+}
+
+#whisker_bar_chat_avatar > img {
+ display: flex;
+ width: 2rem;
+ height: 2rem;
+ border-radius: 50%;
+ object-fit: cover;
+}
+
+#whisker_bar_chat_avatar > img:not(:first-child) {
+ margin-left: -1rem;
+}

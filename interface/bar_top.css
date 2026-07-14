@@ -20,7 +20,7 @@
 
 #whisker_topbar > .chat_name {
  flex: 1;
- text-align: center;
+ color: var(--SmartThemeQuoteColor);
 }
 
 #whisker_topbar .fa-solid {

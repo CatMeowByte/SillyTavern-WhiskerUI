@@ -1,3 +1,4 @@
+@import url('./interface/bar_chat.css');
 @import url('./interface/bar_text.css');
 @import url('./interface/bar_top.css');
 @import url('./interface/checkbox.css');
@@ -105,8 +106,8 @@ dialog.whisker_popup {
  padding: 1rem;
  gap: 1rem;
  border-radius: 1rem;
- max-width: calc(100vw - 2rem);
- max-height: calc(100vh - 2rem);
+ max-width: calc(100dvw - 2rem);
+ max-height: calc(100dvh - 2rem);
 }
 
 [popover].whisker_popup {
