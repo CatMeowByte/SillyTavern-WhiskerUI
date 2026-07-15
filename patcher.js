@@ -9,6 +9,7 @@ const rule_remover = new Set([
  'body.hideChatAvatars .last_mes:not(.smallSysMes)',
  '#sheld',
  '#rightSendForm > div:not(.mes_stop), #leftSendForm > div',
+ '.WIEntryHeaderTitleMobile',
 ]);
 
 for (const sheet of document.styleSheets) {

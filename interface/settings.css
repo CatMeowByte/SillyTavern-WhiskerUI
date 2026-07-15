@@ -31,6 +31,10 @@
  overflow-y: auto;
 }
 
+#WIEntryHeaderTitlesPC {
+ display: none;
+}
+
 /* ============================== */
 
 [popovertarget="setting_list"] {

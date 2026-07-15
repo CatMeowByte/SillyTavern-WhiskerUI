@@ -1,5 +1,7 @@
 // Settings dialog injection
 
+const { eventSource, event_types } = SillyTavern.getContext();
+
 const whisker_topbar = $q('#whisker_topbar');
 
 const whisker_dialog_backdrop = document.createElement('div');

@@ -123,11 +123,14 @@ dialog.whisker_popup[open] {
 
 #whisker_body .whisker_dialog_scroll {
  overflow-y: scroll;
+ display: flex;
 }
 
 #whisker_body .whisker_dialog_scroll > .whisker_popup_content {
  position: unset;
- display: contents;
+ display: flex;
+ width: 100%;
+ height: 100%;
 }
 
 #sheld {
@@ -142,3 +145,36 @@ dialog.whisker_popup[open] {
   margin: auto;
  }
 }
+
+.inline-drawer-header {
+ display: grid;
+ grid-template-columns: 1fr auto;
+ grid-template-rows: auto auto auto;
+}
+
+.world_entry_thin_controls {
+ display: grid;
+ grid-template-columns: auto minmax(0, 1fr);
+ grid-template-rows: auto auto;
+ grid-column: 1;
+ grid-row: 1 / 4;
+}
+
+.inline-drawer-toggle {
+ grid-column: 1;
+ grid-row: 1;
+}
+
+.killSwitch {
+ grid-column: 1;
+ grid-row: 2;
+}
+
+.world_entry_thin_controls > .flex-container {
+ grid-column: 2;
+ grid-row: 1 / 3;
+}
+
+.move_entry_button { grid-column: 2; grid-row: 1; }
+.duplicate_entry_button { grid-column: 2; grid-row: 2; }
+.delete_entry_button { grid-column: 2; grid-row: 3; }
