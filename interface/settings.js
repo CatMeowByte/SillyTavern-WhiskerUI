@@ -65,11 +65,15 @@ for (const [label, icon, content_supplier] of setting_items) {
  $on(dialog_close, 'click', (event) => { event.stopPropagation(); item_dialog.close(); });
 
  dialog_header.append(dialog_title, dialog_close);
- item_dialog.append(dialog_header);
+
+ const dialog_wrap = document.createElement('div');
+ dialog_wrap.className = 'whisker_dialog_scroll';
 
  const moved_element = $q(content_supplier);
  moved_element.className = 'whisker_popup_content';
- item_dialog.append(moved_element);
+ dialog_wrap.append(moved_element);
+
+ item_dialog.append(dialog_header, dialog_wrap);
 
  item_entry.append(item_icon, item_label);
 

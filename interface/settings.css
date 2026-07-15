@@ -31,10 +31,6 @@
  overflow-y: auto;
 }
 
-#WorldInfo {
- display: block;
-}
-
 /* ============================== */
 
 [popovertarget="setting_list"] {
