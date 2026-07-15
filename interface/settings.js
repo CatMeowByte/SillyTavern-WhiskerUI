@@ -107,6 +107,8 @@ $q('h3:has(> [data-i18n="Backgrounds"])').remove();
 $q('h3[data-i18n="Extensions"]').remove();
 $q('.flex-container:has(> h3 > [data-i18n="Persona Management"])').remove();
 $q('.flex-container:has(> h3 > [data-i18n="Worlds/Lorebooks"])').remove();
+$q('#lm_button_panel_pin_div').remove();
+$q('#rm_button_panel_pin_div').remove();
 
 // world info HACK
 const select_element = $q('#world_editor_select');

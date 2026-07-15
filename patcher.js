@@ -8,6 +8,7 @@ for (const sheet of document.styleSheets) {
 const rule_remover = new Set([
  'body.hideChatAvatars .last_mes:not(.smallSysMes)',
  '#sheld',
+ '#rightSendForm > div:not(.mes_stop), #leftSendForm > div',
 ]);
 
 for (const sheet of document.styleSheets) {
@@ -20,7 +21,6 @@ for (const sheet of document.styleSheets) {
 
 
 const rule_replacer = new Map([
- ['#rightSendForm > div:not(.mes_stop), #leftSendForm > div', '#rightSendForm > div, #leftSendForm > div'],
 ]);
 
 const style_modifier = new Map([

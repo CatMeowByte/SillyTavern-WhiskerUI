@@ -32,7 +32,7 @@
 }
 
 #WorldInfo {
- display: contents;
+ display: block;
 }
 
 /* ============================== */

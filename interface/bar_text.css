@@ -16,11 +16,12 @@
 
 #nonQRFormItems {
  display: grid;
- grid-template-columns: 1fr 1fr;
+ grid-template-columns: auto 1fr auto;
  grid-template-rows: auto auto;
- grid-template-areas: "textarea textarea" "left right";
+ grid-template-areas: "textarea textarea textarea" "left middle right";
  gap: 0.5rem;
  padding: 0.5rem;
+ font-size: unset;
 }
 
 #nonQRFormItems .fa-solid {
@@ -36,6 +37,22 @@
 #nonQRFormItems > #leftSendForm {
  grid-area: left;
  justify-self: start;
+}
+
+#whisker_persona_subject {
+ display: flex;
+ align-items: center;
+ gap: 0.5rem;
+ grid-area: middle;
+ justify-self: center;
+}
+
+#whisker_persona_avatar > img {
+ display: block;
+ width: 2rem;
+ height: 2rem;
+ border-radius: 50%;
+ object-fit: cover;
 }
 
 #nonQRFormItems > #rightSendForm {
