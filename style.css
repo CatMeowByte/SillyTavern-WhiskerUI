@@ -121,16 +121,13 @@ dialog.whisker_popup[open] {
  flex-direction: column;
 }
 
-#whisker_body .whisker_dialog_scroll {
- overflow-y: scroll;
- display: flex;
-}
-
-#whisker_body .whisker_dialog_scroll > .whisker_popup_content {
+#whisker_body .whisker_popup > .whisker_popup_content {
  position: unset;
  display: flex;
+ flex-direction: column;
  width: 100%;
  height: 100%;
+ overflow-y: scroll;
 }
 
 #sheld {

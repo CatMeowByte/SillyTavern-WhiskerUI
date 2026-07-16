@@ -46,6 +46,7 @@ const class_modifier = new Map([
  ['#top-settings-holder .drawer-content', { remove: ['fillRight', 'fillLeft'] }],
  ['#wiTopBlock > .flex1.flex.alignSelfStart.range-block:nth-child(2)', { add: ['wide100p'] }],
  ['select', { remove: ['text_pole'] }],
+ ['#WIMultiSelector', { remove: ['alignSelfStart'] }],
 ]);
 
 for (const [selector, ops] of class_modifier) {

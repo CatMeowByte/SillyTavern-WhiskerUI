@@ -26,8 +26,16 @@
 
 #nonQRFormItems .fa-solid {
  font-size: 1rem;
- padding: 0.5rem;
+ padding: 0;
  text-shadow: none;
+ justify-content: center;
+ align-items: center;
+ width: 2rem;
+ aspect-ratio: 1;
+}
+
+#send_but {
+ display: flex;
 }
 
 #nonQRFormItems > #send_textarea {
@@ -59,6 +67,7 @@
  grid-area: right;
  justify-self: end;
  gap: 1rem;
+ min-width: 36px;
 }
 
 #mes_stop,

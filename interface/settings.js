@@ -68,14 +68,10 @@ for (const [label, icon, content_supplier] of setting_items) {
 
  dialog_header.append(dialog_title, dialog_close);
 
- const dialog_wrap = document.createElement('div');
- dialog_wrap.className = 'whisker_dialog_scroll';
-
  const moved_element = $q(content_supplier);
  moved_element.className = 'whisker_popup_content';
- dialog_wrap.append(moved_element);
 
- item_dialog.append(dialog_header, dialog_wrap);
+ item_dialog.append(dialog_header, moved_element);
 
  item_entry.append(item_icon, item_label);
 
@@ -107,7 +103,6 @@ $q('#top-settings-holder').remove()
 $q('#clickSlidersTips').remove()
 $q('.topRightInset').remove()
 $q('[name="userSettingsRowOne"] > .flex-container:first-child').remove();
-$q('#connection_profile_details_content').parentElement.remove();
 $q('h3:has(> [data-i18n="Advanced Formatting"])').remove();
 $q('h3:has(> [data-i18n="Backgrounds"])').remove();
 $q('h3[data-i18n="Extensions"]').remove();
@@ -115,6 +110,11 @@ $q('.flex-container:has(> h3 > [data-i18n="Persona Management"])').remove();
 $q('.flex-container:has(> h3 > [data-i18n="Worlds/Lorebooks"])').remove();
 $q('#lm_button_panel_pin_div').remove();
 $q('#rm_button_panel_pin_div').remove();
+
+// extension
+$q('#extensions_settings').classList.remove('wide50p');
+$q('#extensions_settings2').classList.remove('wide50p');
+
 
 // world info HACK
 const select_element = $q('#world_editor_select');

@@ -35,6 +35,18 @@
  display: none;
 }
 
+#rm_extensions_block > .extensions_block.flex-container {
+ flex-direction: column;
+}
+
+.world_entry_thin_controls > .flex-container.alignitemscenter.wide100p {
+ flex-direction: column
+}
+
+.world_entry_thin_controls > label {
+ text-wrap: nowrap;
+}
+
 /* ============================== */
 
 [popovertarget="setting_list"] {
