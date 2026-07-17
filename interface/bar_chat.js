@@ -31,7 +31,10 @@ hidden_close_chat?.remove();
 btn_chat_close.innerHTML = '';
 btn_chat_close.classList.add('fa-solid', 'fa-times');
 
-bar_chat.append(btn_chat_close, bar_chat_subject, btn_world);
+const btn_options = $q('#options_button');
+btn_options.classList.replace('fa-bars', 'fa-ellipsis-vertical');
+
+bar_chat.append(btn_chat_close, bar_chat_subject, btn_world, btn_options);
 $q('#sheld').insertBefore(bar_chat, $q('#chat'));
 
 function update_bar_chat() {
@@ -68,3 +71,7 @@ function update_bar_chat() {
 
 update_bar_chat();
 eventSource.on(event_types.CHAT_CHANGED, update_bar_chat);
+eventSource.on(event_types.CHARACTER_EDITED, update_bar_chat);
+eventSource.on(event_types.CHARACTER_DELETED, update_bar_chat);
+eventSource.on(event_types.CHARACTER_RENAMED, update_bar_chat);
+eventSource.on(event_types.GROUP_UPDATED, update_bar_chat);

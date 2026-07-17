@@ -10,19 +10,16 @@ const btn_new_chat = $q('#option_start_new_chat');
 btn_new_chat.innerHTML = '';
 btn_new_chat.classList.add('fa-solid', 'fa-plus');
 
-const btn_options = $q('#options_button');
-btn_options.classList.replace('fa-bars', 'fa-ellipsis-vertical');
-
 const btn_extensions = $q('#extensionsMenuButton');
 btn_extensions.classList.replace('fa-magic-wand-sparkles', 'fa-wrench');
 
-bar_top.append(btn_new_chat, chat_name, btn_extensions, btn_options);
+bar_top.append(btn_new_chat, chat_name, btn_extensions);
 $q('#sheld').insertBefore(bar_top, $q('#chat'));
 
 function update_chat_name() {
  const name = getCurrentChatId();
  chat_name.setAttribute('aria-disabled', name ? 'false' : 'true');
- chat_name.textContent = name || 'No chat selected';
+ chat_name.textContent = name || '';
 }
 
 $on(chat_name, 'click', async () => {

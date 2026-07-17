@@ -20,6 +20,10 @@
 
 #whisker_bar_chat .fa-solid {
  padding: 0.5rem;
+ width: 2rem;
+ display: flex;
+ justify-content: center;
+ align-items: center;
 }
 
 #whisker_bar_chat_subject {

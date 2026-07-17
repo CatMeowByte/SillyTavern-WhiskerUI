@@ -21,10 +21,15 @@
 #whisker_topbar > .chat_name {
  flex: 1;
  color: var(--SmartThemeQuoteColor);
+ text-align: center;
 }
 
 #whisker_topbar .fa-solid {
  padding: 0.5rem;
+ width: 2rem;
+ display: flex;
+ justify-content: center;
+ align-items: center;
 }
 
 #whisker_topbar > .not-in-chat {

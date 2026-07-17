@@ -36,4 +36,9 @@ function update_persona() {
 
 eventSource.on(event_types.CHAT_CHANGED, update_persona);
 eventSource.on(event_types.SETTINGS_UPDATED, update_persona);
+eventSource.on(event_types.PERSONA_CHANGED, update_persona);
+eventSource.on(event_types.PERSONA_CREATED, update_persona);
+eventSource.on(event_types.PERSONA_UPDATED, update_persona);
+eventSource.on(event_types.PERSONA_RENAMED, update_persona);
+eventSource.on(event_types.PERSONA_DELETED, update_persona);
 update_persona();
